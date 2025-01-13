@@ -5,6 +5,7 @@ from utils.Asthma_model import predict_asthma  # Import the function from utils
 from utils.heart_model import predict_disease_heart  # Import the function from utils
 from utils.diabetes_util import predict_disease_diabetes
 from utils.stroke_util import predict_disease_stroke 
+import os
 
 app = Flask(__name__)
 CORS(app, resources={
@@ -119,5 +120,5 @@ def stroke_predict():
         app.logger.error(f"Error in /strokepredict: {str(e)}")
         return jsonify({'error': 'Internal server error'}), 500
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3000)), debug=True)
