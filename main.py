@@ -1,11 +1,12 @@
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # This must be at the very top before any TF imports
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
 from utils.Asthma_model import predict_asthma  # Import the function from utils
 from utils.heart_model import predict_disease_heart  # Import the function from utils
 from utils.diabetes_util import predict_disease_diabetes
-from utils.stroke_util import predict_disease_stroke 
-import os
+from utils.stroke_util import predict_disease_stroke  
 
 app = Flask(__name__)
 CORS(app, resources={
