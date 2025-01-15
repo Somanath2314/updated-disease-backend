@@ -1,0 +1,9 @@
+
+python@3.10 //python version i need
+brew install python@3.10
+//go to ur app's path
+python3.10 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+pip freeze //if you download any extra things, inorder to add them to the requirements.txt file
