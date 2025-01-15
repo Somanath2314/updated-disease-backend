@@ -1,5 +1,6 @@
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # This must be at the very top before any TF imports
+import tensorflow as tf
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
